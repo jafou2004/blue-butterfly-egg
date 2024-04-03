@@ -1,0 +1,19 @@
+{
+  "name": "blue-butterfly-egg",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.11",
+    "vite-plugin-monkey": "^3.5.1"
+  },
+  "dependencies": {
+    "redom": "^4.0.0",
+    "toastr": "^2.1.4"
+  }
+}

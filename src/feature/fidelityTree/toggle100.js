@@ -3,7 +3,7 @@ import { dqsa } from '../../utils/dom';
 import { setStyle } from 'redom';
 import { state } from '../../utils/storage';
 
-const handleSwitch100 = (event) => {
+const handleSwitch100 = () => {
   state.toggleSwitch100();
   toggle100();
 };

@@ -3,6 +3,7 @@ import changelogString from '../../CHANGELOG.md?raw';
 
 let bbePreviousVersion = localStorage.bbe_version;
 let stateSwitch100 = localStorage.bbe_stateSwitch100 === 'on';
+let stateSwitchCompact = localStorage.bbe_stateSwitchCompact === 'on';
 
 let bbeChangeLog = null;
 
@@ -12,6 +13,15 @@ const switch100 = () => {
 const toggleSwitch100 = () => {
   stateSwitch100 = !stateSwitch100;
   localStorage.bbe_stateSwitch100 = stateSwitch100 ? 'on' : 'off';
+};
+
+const switchCompact = () => {
+  return stateSwitchCompact;
+};
+
+const toggleSwitchCompact = () => {
+  stateSwitchCompact = !stateSwitchCompact;
+  localStorage.bbe_stateSwitchCompact = stateSwitchCompact ? 'on' : 'off';
 };
 
 const previousVersion = () => {
@@ -62,4 +72,6 @@ export const state = {
   previousVersion,
   majVersion,
   getChangeLog,
+  switchCompact,
+  toggleSwitchCompact,
 };

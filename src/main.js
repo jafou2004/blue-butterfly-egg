@@ -1,3 +1,5 @@
+import 'toastr/build/toastr.min.css';
+
 import { dqs, dqsa } from './utils/dom';
 
 import { createAboutModalNode } from './create/aboutModalNode';
@@ -5,10 +7,9 @@ import { createChangelogModalNode } from './create/changelogModalNode';
 import { createMenuNode } from './create/menuNode';
 import { modifyFidelityTreePage } from './feature/fidelityTree';
 import { state } from './utils/storage';
-import { toggle100 } from './feature/fidelityTree/toggle100';
-
-import 'toastr/build/toastr.min.css';
 import toastr from 'toastr';
+import { toggle100 } from './feature/fidelityTree/toggle100';
+import { toggleCompact } from './feature/fidelityTree/toggleCompact';
 
 // page "arbre de fidelite"
 if (window.location.pathname.endsWith('/avantages/arbre-de-fidelite')) {
@@ -26,8 +27,6 @@ if (!window.location.pathname.endsWith('/fr/connexion')) {
   lastModal.after(createAboutModalNode());
   lastModal.after(createChangelogModalNode());
 
-  console.log(state.previousVersion());
-
   toastr.options = {
     progressBar: true,
     positionClass: 'toast-top-right',
@@ -41,7 +40,6 @@ if (!window.location.pathname.endsWith('/fr/connexion')) {
       'Plugin BBE installé',
     );
   } else if (state.previousVersion() != APP_VERSION) {
-    console.log('Script maj done');
     toastr.success(
       'Allez dans BBE > Historique pour voir les nouveautées',
       'BBE mise à jour',
@@ -64,6 +62,7 @@ if (!window.location.pathname.endsWith('/fr/connexion')) {
             window.location.pathname.endsWith('/avantages/arbre-de-fidelite')
           ) {
             toggle100();
+            toggleCompact();
           }
         }, 10);
       }

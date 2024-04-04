@@ -3,6 +3,7 @@ import { el, mount, setStyle } from 'redom';
 
 import { createDisplayCoinsNode } from '../create/displayCoinsNode';
 import { createToggle100Node } from './fidelityTree/toggle100';
+import { createToggleCompactNode } from './fidelityTree/toggleCompact';
 import { rmClass } from '../utils/dom';
 
 export const modifyFidelityTreePage = () => {
@@ -75,6 +76,7 @@ export const modifyFidelityTreePage = () => {
     tree.prepend(swithcConversion);
   }
 
+  tree.prepend(createToggleCompactNode());
   tree.prepend(createToggle100Node());
   tree.prepend(createDisplayCoinsNode(amount));
 

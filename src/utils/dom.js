@@ -17,3 +17,7 @@ export const rmClass = (node, classe) => {
 export const addClass = (node, classe) => {
   node.classList.add(classe);
 };
+
+export const hasList = (node, classe) => {
+  return node.classList.contains(classe);
+};

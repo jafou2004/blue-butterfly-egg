@@ -64,10 +64,11 @@ export const createAboutModalNode = () => {
       style: { color: '#fff', fontSize: '18px', lineHeight: '22px' },
     }),
   );
-  addFeature('entête plus compacte', divContent);
+  addFeature('entête plus compact', divContent);
   addFeature('bouton pour masquer de part à 100%', divContent);
+  addFeature('bouton pour affichage compact des parts', divContent);
 
-  mount(divContent, el('div', { style: { display: 'block', height: '50px' } }));
+  mount(divContent, el('div', { style: { display: 'block', height: '40px' } }));
   mount(
     divContent,
     el(
